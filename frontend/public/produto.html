@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Cadastro de Produto</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Vendor CSS Files -->
+    <link href="../src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../src/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center p-4">
+    <div class="d-flex align-items-center justify-content-between w-100">
+        <a href="dashboard.html" class="logo d-flex align-items-center">
+            <img src="../src/imagem/logo.png" alt="">
+        </a>
+        <div class="search-bar flex-grow-1 mx-2">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="O que está procurando?" title="Enter search keyword" class="form-control">
+                <button type="submit" title="Search" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+
+        <!-- Ícone do Carrinho -->
+        <div class="cart-icon ms-2 me-4"> <!-- Adicionando margem à esquerda -->
+            <a href="carrinho.html" class="btn btn-light position-relative p-0 bg-black border-black">
+                <!-- <i class="bi bi-cart-fill" style="font-size: 24px;"></i> -->
+                 <img src="../src/imagem/carrinho.png" alt="">
+            </a>
+        </div>
+    </div>
+</header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" href="cliente.html">
+          <!-- <i class="bi bi-grid"></i> -->
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" href="produto.html">
+          <!-- <i class="bi bi-menu-button-wide"></i> -->
+          <span>Produtos</span>
+        </a>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="venda.html">
+          <!-- <i class="bi bi-journal-text"></i> -->
+          <span>Vendas</span>
+        </a>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="promocao.html">
+          <!-- <i class="bi bi-layout-text-window-reverse"></i> -->
+          <span>Promoções</span>
+        </a>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" href="#">
+          <!-- <i class="bi bi-envelope"></i> -->
+          <span>Contato</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item p-2">
+        <a class="nav-link collapsed" href="login.html">
+          <!-- <i class="bi bi-box-arrow-in-right"></i> -->
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+    </ul>
+  </aside><!-- End Sidebar-->
+
+    <!-- ======= Main Content ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Cadastro de Produto</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="cardCad">
+                    <div class="card-bodyCad">
+                        <h5 class="card-title">Registrar Produto</h5>
+                        <form id="cadastroProduto">
+                            <!-- Nome do Produto -->
+                            <div class="row mb-3">
+                                <label for="inputNomeProduto" class="col-sm-2 col-form-label">Nome do Produto</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputNomeProduto"
+                                        placeholder="Digite o nome do produto">
+                                </div>
+                            </div>
+
+                            <!-- Descrição do Produto -->
+                            <div class="row mb-3">
+                                <label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="inputDescricao" rows="3"
+                                        placeholder="Digite a descrição do produto"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Preço  -->
+                            <div class="row mb-3">
+                                <label for="inputPreco" class="col-sm-2 col-form-label">Preço</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control" id="inputPreco"
+                                        placeholder="Digite o preço">
+                                </div>
+                            </div>
+
+                            <!-- Botões de Ação -->
+                            <div class="text-center">
+                                <button type="submit" id="enviarProduto" class="btn btn-primary">Enviar</button>
+                                <button id="deleteButtonProduto" class="btn btn-danger">Deletar</button>
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                            </div>
+
+                                             <!-- Tabela de Produtos -->
+                        <h5 class="card-title mt-4">Lista de Produtos</h5>
+                        <table class="table" id="produto-table">
+                            <thead>
+                                <tr>
+                                    <th class="rowcoltab" scope="col">ID</th>
+                                    <th class="rowcoltab" scope="col">Nome</th>
+                                    <th class="rowcoltab" scope="col">Descição</th>
+                                    <th class="rowcoltab" scope="col">Preco</th>
+                                    <th class="rowcoltab" scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="produto-list">
+                                <!-- As linhas serão inseridas aqui -->
+                            </tbody>
+                        </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- End Main Content -->
+
+    <script src="../src/assets/js/produto.js"></script>
+</body>
+
+</html>
